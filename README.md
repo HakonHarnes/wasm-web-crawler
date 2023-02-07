@@ -15,7 +15,8 @@ The crawler can be run using the command `./run.sh`. To see the available option
 A single crawler instance consists of one `puppeteer-cluster` process, which
 controls the navigation to different web pages (by default, 8 at a time), 
 and one `mitmproxy` instance, which intercepts the requests made my puppeteer
-and searches for Wasm modules.  
+and searches for WebAssembly modules.  
+
 We experienced issues which we suspected to be related to limited throughput
 of the python script that evaluates sent requests and responses; Thus, we use `util/spawn.sh` to spawn multiple of these crawler instances at the same time -- see the
 image below:
