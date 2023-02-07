@@ -1,15 +1,14 @@
-# Crawler
+# WebAssembly Web Crawler 
 
-Web Crawler for collecting WebAssembly modules and related JavaScript files. Built using `puppeteer-cluster` and `mitmproxy`.
+Web Crawler for collecting WebAssembly modules and related JavaScript files. The code is based on the original repository found at https://github.com/Shopify/wasm-bench. It has been built using `puppeteer-cluster` and `mitmproxy`. The WebAssembly binaries extracted from this will be used in my master's thesis project.
 
 ## Installing Dependencies
 
-`make install` will install the required node modules, download a version of mitmproxy and extract the required binary into `./bin/`.
+To install the necessary dependencies, run the command `make install`. This will install the required node modules and download a specific version of `mitmproxy`. The required binary will then be extracted into the `./bin` folder.
 
 ## Running
 
-Run using `./run.sh`. To see available options, use `./run.sh --help`.
-Note that the `mitmdump` processes seem to constantly grow in size ([may be related - mitmdump leaking memory](https://github.com/mitmproxy/mitmproxy/issues/3191#issuecomment-552911587)), so the crawler may need to be restarted regularly.
+The crawler can be run using the command `./run.sh`. To see the available options, run `./run.sh --help`. Please note that the `mitmdump` processes tend to grow in size over time, and the crawler may need to be restarted regularly to prevent memory leaks  ([may be related - mitmdump leaking memory](https://github.com/mitmproxy/mitmproxy/issues/3191#issuecomment-552911587)). Consider installing a newer version of `mitmproxy` to resolve the issue and move the binary to `./bin`. 
 
 ## Architecture
 
